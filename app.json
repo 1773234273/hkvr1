@@ -1,5 +1,5 @@
 {
-  "name": "Heroku-v2ray",
+  "name": "hkvr1",
   "description": "将v2ray部署在Heroku上",
   "keywords": [
     "v2ray VMess VLESS"
