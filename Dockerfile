@@ -5,7 +5,9 @@ COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/static-html /usr/share/nginx/html/index
 COPY configure.sh /configure.sh
-#COPY v_config /
+COPY vless_ws_tls.json /
+COPY vmess_ws_tls.json /
+
 RUN chmod +x /configure.sh
 
 ENTRYPOINT ["sh", "/configure.sh"]
