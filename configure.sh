@@ -23,4 +23,4 @@ dd if=/dev/zero of=10mb.bin bs=10M count=1
 # Run nginx
 /bin/bash -c "envsubst '\$PORT,\$WS_PATH' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 sleep 10
-echo `ps -ef|grep nginx`
+more /etc/nginx/conf.d/default.conf
