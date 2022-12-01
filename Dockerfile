@@ -5,7 +5,7 @@ COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/static-html /usr/share/nginx/html/index
 COPY configure.sh /configure.sh
-#COPY v2ray_config /
+#COPY v_config /
 RUN chmod +x /configure.sh
 
 ENTRYPOINT ["sh", "/configure.sh"]
