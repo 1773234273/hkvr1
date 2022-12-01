@@ -1,7 +1,7 @@
 #!/bin/sh
 # V2Ray generate configuration
 # Download and install V2Ray
-config_path=vmess_ws_tls.json"
+config_path=vmess_ws_tls.json
 mkdir /tmp/v2ray
 curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/download/v4.45.2/v2ray-linux-64.zip
 unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
@@ -19,3 +19,6 @@ dd if=/dev/zero of=100mb.bin bs=100M count=1
 dd if=/dev/zero of=10mb.bin bs=10M count=1
 # Run V2Ray
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json &
+# Run nginx
+cp /etc/nginx/conf.d/default.conf.template /etc/nginx/conf.d/default.conf
+nginx -g "daemon off;"
