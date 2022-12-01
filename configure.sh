@@ -12,7 +12,6 @@ rm -rf /tmp/v2ray
 # V2Ray new configuration
 install -d /usr/local/etc/v2ray
 envsubst '\$UUID,\$WS_PATH' < $config_path > /usr/local/etc/v2ray/config.json
-more /usr/local/etc/v2ray/config.json
 # MK TEST FILES
 mkdir /opt/test
 cd /opt/test
@@ -20,6 +19,8 @@ dd if=/dev/zero of=100mb.bin bs=100M count=1
 dd if=/dev/zero of=10mb.bin bs=10M count=1
 # Run V2Ray
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json &
+more /usr/local/etc/v2ray/config.json
+
 # Run nginx
 /bin/bash -c "envsubst '\$PORT,\$WS_PATH' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 sleep 10
